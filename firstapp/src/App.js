@@ -15,16 +15,29 @@ function App() {
 
   return (
     <div>
-      {users.length > 0 && (
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>
-              {user.name}
-              {user.email}
-            </li>
-          ))}
-        </ul>
-      )}
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">email</th>
+            <th scope="col">Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.length > 0 &&
+            users.map((user) => (
+              <tr>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                <td>{user.Address}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
     </div>
   );
 }
